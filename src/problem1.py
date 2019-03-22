@@ -1,8 +1,8 @@
 """
 Exam 1, problem 1. 15 Points
-Authors: Every CSSE faculty member, Dr. Brackin, and PUT YOUR NAME HERE.
+Authors: Every CSSE faculty member, Dr. Brackin, and Billy Davignon.
 """
-# TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+# Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -12,8 +12,8 @@ def main():
     # UN-comment tests as you work the problems.
     ###########################################################################
 
-    #run_test_init()
-    #run_test_go_to_floor()
+    run_test_init()
+    run_test_go_to_floor()
     #run_test_get_passengers()
 
 
@@ -57,8 +57,12 @@ class Elevator(object):
           :type capacity: int
           :type num_floors: int
         """
+        self.capacity = capacity
+        self.num_floors = num_floors
+        self.changes = 0
+
         # ---------------------------------------------------------------------
-        #     TODO: 2. Implement and test this function. (3 pts)
+        #     Done: 2. Implement and test this function. (3 pts)
         #     See the testing code (below) for more examples.
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -92,6 +96,8 @@ class Elevator(object):
           #   the current floor does not change
           #   False is returned by the method
         """
+        self.floor = floor
+        self.changes = self.changes - 1
         # ---------------------------------------------------------------------
         #     TODO: 4. Implement the go_to_floor method. (3 pts)
         #     Write the testing code (below) before writing this method.
@@ -174,7 +180,7 @@ def run_test_go_to_floor():
     print('-----------------------------------------------------------')
     print('Testing the   go_to_floor   method of the Elevator class.')
     print('-----------------------------------------------------------')
-    #     TODO: 3. Write tests for the go_to_floor method. (2 pts)
+    #     Done: 3. Write tests for the go_to_floor method. (2 pts)
     #     A recommended format is shown below.  Be sure to
     #     add your actual code where indicated.  Include two
     #     test cases - one that works and one that returns False
@@ -186,6 +192,22 @@ def run_test_go_to_floor():
     expected_capacity = 20
     expected_num_floors = 18
     expected_go_to_floor = 4
+    print('Expected: go_to_floor returns :', True)
+    print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
+
+    # Test 2:  Sends elevator to 4th floor.
+    e1 = Elevator(20, 18)
+    expected_capacity = 20
+    expected_num_floors = 18
+    expected_go_to_floor = 1
+    print('Expected: go_to_floor returns :', True)
+    print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
+
+    # Test 3:  Sends elevator to 4th floor.
+    e1 = Elevator(20, 18)
+    expected_capacity = 20
+    expected_num_floors = 18
+    expected_go_to_floor = 18
     print('Expected: go_to_floor returns :', True)
     print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
     ################################################################

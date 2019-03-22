@@ -8,8 +8,8 @@ difficult elements as time permits.
 Every student should be able to print the string and the
 length of the string.  If you don't remember how, LOOK at
 your programming sessions!!!   
-PUT YOUR NAME HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+Billy Davginon.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -59,9 +59,61 @@ def test_problem2():
     print('Test case 1 Actual: ')
     problem3(string_of_characters)
     print('*********************************************')
-    # TODO: 2. Write at least three reasonable test cases below.
+    # Done: 2. Write at least three reasonable test cases below.
     #         Three excellent test cases are worth 10 points
 
+    #  Test case 2
+    #  The given string is ABCCBA
+    print('*********************************************')
+    print('Test case 1 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'ABCCBA'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 6)
+    print('Number of alphabetic characters: ', 6)
+    print('Number of digits: ', 0)
+    print('Reversed string is: ABCCBA')
+    print('The user entered a palindrome')
+    print()
+    print('*********************************************')
+    print('Test case 2 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
+
+    #  Test case 3
+    #  The given string is ABC123
+    print('*********************************************')
+    print('Test case 1 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'ABC123'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 6)
+    print('Number of alphabetic characters: ', 3)
+    print('Number of digits: ', 3)
+    print('Reversed string is: 321CBA')
+    print()
+    print('*********************************************')
+    print('Test case 3 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
+
+    #  Test case 4
+    #  The given string is 4mom4
+    print('*********************************************')
+    print('Test case 1 Expected: ')
+    print('*********************************************')
+    string_of_characters = '4mom4'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 5)
+    print('Number of alphabetic characters: ', 3)
+    print('Number of digits: ', 2)
+    print('Reversed string is: 4mom4')
+    print('The user entered a palindrome')
+    print()
+    print('*********************************************')
+    print('Test case 4 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
 
 def problem3(string_of_characters):
     """
@@ -121,7 +173,33 @@ def problem3(string_of_characters):
        Reversed string: b21a
        The user entered a normal string
     """
-    # TODO: 3. Implement this function.
+    print('String entered: ', string_of_characters)
+    count = 0
+    total = 0
+    number = 0
+    hey = 0
+    for k in range(len(string_of_characters)):
+        count = count + 1
+    print('Length of string: ',count)
+    for k in range(len(string_of_characters)):
+        if string_of_characters[k].isalpha():
+            number = number + 1
+    print('Number of alphabetic characters: ', number)
+    for k in range(len(string_of_characters)):
+        if string_of_characters[k].isdigit():
+            total = total + 1
+    print('Number of digits: ', total)
+    print('Reversed string: ', reverseString(string_of_characters))
+    if reverseString(string_of_characters) == string_of_characters:
+        print('The user entered a palindrome')
+    else:
+        print('The user entered a normal string')
+
+
+
+
+
+    # Done: 3. Implement this function.
     # To implement this function, you need to reverse a string.
     # If you write your own method to reverse a string and solve
     # the entire problem, you will get 25 points. If you use the
